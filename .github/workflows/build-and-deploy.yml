@@ -8,20 +8,21 @@ jobs:
   build-and-deploy:
     name: Build and Deploy
     runs-on: [ubuntu-latest]
+    strategy:
+      matrix:
+        node-version: [8.x, 10.x, 12.x]
+
     steps:
-      - name: Checkout Repo
-        uses: actions/checkout@v1
-      - name: Setup Node.js environment
-        uses: actions/setup-node@v2.1.5
-        with:
-          node-version: 8.x
-      - name: Install Dependencies
-        run: npm install
-      - name: Create project build
-        run: npm run build
-      - name: Deploy to firebase
-        uses: w9jds/firebase-action@v2.0.0
-        with:
-          args: deploy --only hosting
-        env:
-          FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
+    - uses: actions/checkout@v2
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v1
+      with:
+        node-version: ${{ matrix.node-version }}
+    - name: npm install
+      run: npm install
+    - name: Deploy to firebase
+      uses: w9jds/firebase-action@v2.0.0
+      with:
+        args: deploy --only hosting
+      env:
+        FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
