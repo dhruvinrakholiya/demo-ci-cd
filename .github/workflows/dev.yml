@@ -20,6 +20,7 @@ jobs:
         node-version: ${{ matrix.node-version }}
     - name: npm install
       run: npm install
+      run: npm run start
     - name: Deploy to firebase
       uses: w9jds/firebase-action@v2.0.0
       with:
