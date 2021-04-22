@@ -20,11 +20,11 @@ jobs:
         node-version: ${{ matrix.node-version }}
     - name: npm install
       run: npm install
-    - name: npm run start
-      run: npm start
     - name: Deploy to firebase
       uses: w9jds/firebase-action@v2.0.0
       with:
         args: deploy --only hosting
       env:
         FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
+    - name: npm run start
+      run: npm start
