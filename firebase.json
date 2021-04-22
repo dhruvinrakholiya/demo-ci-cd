@@ -1,16 +1,10 @@
 {
   "hosting": {
-    "public": "public",
+    "public": "demo-ci-cd",
     "ignore": [
       "firebase.json",
       "**/.*",
       "**/node_modules/**"
-    ],
-    "rewrites": [
-      {
-        "source": "**",
-        "destination": "/index.html"
-      }
     ]
   }
 }

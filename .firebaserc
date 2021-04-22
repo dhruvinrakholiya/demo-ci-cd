@@ -1,5 +1,6 @@
 {
   "projects": {
-    "dev": "fir-ci-cd-56630"
+    "dev": "fir-ci-cd-56630",
+    "default": "fir-ci-cd-56630"
   }
 }
