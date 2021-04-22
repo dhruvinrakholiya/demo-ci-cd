@@ -1,6 +1,6 @@
 {
   "hosting": {
-    "public": "demo-ci-cd",
+    "public": "public/../",
     "ignore": [
       "firebase.json",
       "**/.*",
