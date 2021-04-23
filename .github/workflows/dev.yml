@@ -27,6 +27,7 @@ jobs:
 #       with:
 #         params: --only functions
       uses: dhruvinrakholiya/demo-ci-cd@firebase_version
+#
       with:
         args: deploy --only functions
       env:
