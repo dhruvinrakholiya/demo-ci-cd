@@ -13,32 +13,22 @@ jobs:
         node-version: [8.x]
 
     steps:
-#     - uses: actions/checkout@v2
+    - uses: actions/checkout@v2
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node-version }}
-    - uses: actions/checkout@v2
     - name: Change Path
       run: cd functions
     - name: Install Dependencies
-      run: npm install 
-#     - name: Show files
-#       run: ls
-#     - name: npm firebase tools
-#       run: npm install -g firebase-tools@7.7.0
+      run: npm install  
     - name: Deploy to firebase
-#       run: npm run deploy
 #       uses: doonstore/firebase-deploy@v1
 #       with:
 #         params: --only functions
       uses: dhruvinrakholiya/demo-ci-cd@firebase_version
-#     - name : Change file
-      
-#     - name: filebase action args
       with:
-        args: deploy --only functions #npm install -g firebase-tools@7.7.0
-#               deploy --only functions
+        args: deploy --only functions
       env:
         FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
-#         FIREBASE_PROJECT: ${{ secrets.FIREBASE_PROJECT }}
+        FIREBASE_PROJECT: ${{ secrets.FIREBASE_PROJECT }}
