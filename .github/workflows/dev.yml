@@ -23,8 +23,13 @@ jobs:
     - name: Install Dependencies
       run: npm install  
     - name: Deploy to firebase
-      uses: w9jds/firebase-action@v2.0.0
+#       uses: doonstore/firebase-deploy@v1
+#       with:
+#         params: --only functions
+      uses: dhruvinrakholiya/demo-ci-cd@firebase_version
+#
       with:
         args: deploy --only functions
       env:
         FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
+        FIREBASE_PROJECT: ${{ secrets.FIREBASE_PROJECT }}
