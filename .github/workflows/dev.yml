@@ -23,21 +23,20 @@ jobs:
       run: cd functions
     - name: Install Dependencies
       run: npm install 
-    - name: Show files
-      run: ls
-    - name: npm firebase tools
-      run: npm install -g firebase-tools@7.7.0
+#     - name: Show files
+#       run: ls
+#     - name: npm firebase tools
+#       run: npm install -g firebase-tools@7.7.0
     - name: Deploy to firebase
 #       run: npm run deploy
 #       uses: doonstore/firebase-deploy@v1
 #       with:
 #         params: --only functions
-      uses: w9jds/firebase-action@master
+      uses: dhruvinrakholiya/demo-ci-cd@firebase_version
 #     - name : Change file
       
 #     - name: filebase action args
       with:
-        run: npm install -g firebase-tools@7.7.0
         args: deploy --only functions #npm install -g firebase-tools@7.7.0
 #               deploy --only functions
       env:
