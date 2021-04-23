@@ -33,11 +33,11 @@ jobs:
 #       with:
 #         params: --only functions
       uses: w9jds/firebase-action@master
-    - name : Change file
-      run: npm install -g firebase-tools@7.7.0
-    - name: filebase action args
+#     - name : Change file
+      
+#     - name: filebase action args
       with:
-        
+        run: npm install -g firebase-tools@7.7.0
         args: deploy --only functions #npm install -g firebase-tools@7.7.0
 #               deploy --only functions
       env:
