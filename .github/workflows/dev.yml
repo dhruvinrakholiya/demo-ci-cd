@@ -18,13 +18,12 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node-version }}
-    - name: change path
-      run: cd functions
     - name: npm install
-      run: npm install
+      run: cd functions
+           npm install
     - name: Deploy to firebase
       uses: w9jds/firebase-action@v2.0.0
       with:
-        args: deploy --only functions
+        args: firebase deploy --only functions
       env:
         FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
