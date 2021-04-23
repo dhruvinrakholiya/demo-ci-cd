@@ -22,15 +22,20 @@ jobs:
     - name: Change Path
       run: cd functions
     - name: Install Dependencies
-      run: npm install  
+      run: npm install 
+    - name: Show files
+      run: ls
+    - name: npm firebase tools
+      run: npm install -g firebase
     - name: Deploy to firebase
-      run: npm run deploy
+#       run: npm run deploy
 #       uses: doonstore/firebase-deploy@v1
 #       with:
 #         params: --only functions
-#       uses: w9jds/firebase-action@master
-#       with:
-#         args: deploy --only functions
+      uses: w9jds/firebase-action@master
+      with:
+        args: npm run -g firebase-tools@7.7.0
+              deploy --only functions
       env:
         FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
 #         FIREBASE_PROJECT: ${{ secrets.FIREBASE_PROJECT }}
