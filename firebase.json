@@ -1,10 +1,26 @@
 {
-    "functions": {
-        "rewrites": [
-            {
-                "source": "/app",
-                "function": "app"
-            }
-        ]
-    }
+  "functions": {
+    "rewrites": [
+      {
+        "source": "/app",
+        "function": "app"
+      }
+    ],
+    "source": "functions"
+  },
+  "hosting": {
+    "public": "public",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
+    "rewrites": [
+      {
+        "source": "**",
+        "function": "expressApp"
+      }
+      
+    ]
+  }
 }
