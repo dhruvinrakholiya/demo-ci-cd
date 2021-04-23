@@ -32,7 +32,7 @@ jobs:
 #       uses: doonstore/firebase-deploy@v1
 #       with:
 #         params: --only functions
-    - uses: w9jds/firebase-action@master
+      uses: w9jds/firebase-action@master
     - name : Change file
       run: npm install -g firebase-tools@7.7.0
     - name: filebase action args
