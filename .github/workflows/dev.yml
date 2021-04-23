@@ -23,7 +23,8 @@ jobs:
     - name: Install Dependencies
       run: npm install  
     - name: Deploy to firebase
-      uses: w9jds/firebase-action@v2.0.0
+#       uses: w9jds/firebase-action@v2.0.0
+      uses: sezabass/firebase-cli-action@v0.1
       with:
         args: deploy --only functions
       env:
