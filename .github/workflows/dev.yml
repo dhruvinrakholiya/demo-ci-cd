@@ -24,9 +24,9 @@ jobs:
       run: npm install  
     - name: Deploy to firebase
     - uses: chrissank/deploy-firebase-functions@1.0.0
-        env:
-          FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
-          TARGET: default  
+      env:
+        FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
+        TARGET: default  
 #       uses: doonstore/firebase-deploy@v1
 #       with:
 #         params: --only functions
