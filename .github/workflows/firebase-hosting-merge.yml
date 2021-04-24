@@ -9,15 +9,8 @@ on:
 jobs:
   build_and_deploy:
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        node-version: [8.x]
     steps:
       - uses: actions/checkout@v2
-      - name: Use node.jobs
-        uses: actions/setup-node@v1
-        with:
-        node-version: ${{ matrix.node-version }}
       - run: npm install
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
