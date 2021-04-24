@@ -27,7 +27,7 @@ jobs:
     #   env:
     #     FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
     #     TARGET: default 
-      uses: doonstore/firebase-deploy@v1
+      # uses: doonstore/firebase-deploy@v1
       with:
         params: --only functions
       uses: w9jds/firebase-action@master
