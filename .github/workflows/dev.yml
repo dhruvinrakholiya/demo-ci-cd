@@ -26,10 +26,11 @@ jobs:
 #       uses: doonstore/firebase-deploy@v1
 #       with:
 #         params: --only functions
-      uses: w9jds/firebase-action@master
-#
-      with:
-        args: deploy --only functions,hosting
-      env:
-        FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
-        FIREBASE_PROJECT: ${{ secrets.FIREBASE_PROJECT }}
+    - uses: FirebaseExtended/action-hosting-deploy@v0
+        with:
+          repoToken: '${{ secrets.GITHUB_TOKEN }}'
+          firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_FIR_CI_CD_56630 }}'
+          channelId: live
+          projectId: fir-ci-cd-56630
+        env:
+          FIREBASE_CLI_PREVIEWS: hostingchannels
