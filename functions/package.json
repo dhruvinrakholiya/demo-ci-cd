@@ -9,9 +9,6 @@
     "deploy": "firebase deploy --only functions:expressApp",
     "logs": "firebase functions:log"
   },
-  "engines": {
-    "node": "8"
-  },
   "dependencies": {
     "cookie-parser": "^1.4.5",
     "firebase-admin": "^8.6.0",
