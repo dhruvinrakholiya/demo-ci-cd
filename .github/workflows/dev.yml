@@ -23,6 +23,7 @@ jobs:
     - name: Install Dependencies
       run: npm install  
     - name: Deploy to Firebase
+<<<<<<< HEAD
     #   uses: chrissank/deploy-firebase-functions@1.0.0
     #   env:
     #     FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
@@ -34,6 +35,9 @@ jobs:
 #
       with:
         args: deploy --only functions,hosting
+=======
+      uses: chrissank/deploy-firebase-functions@1.0.1
+>>>>>>> 571385aca4061f03a5a5e7b22245cfb00910a2e1
       env:
         FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
         FIREBASE_PROJECT: ${{ secrets.FIREBASE_PROJECT }}
