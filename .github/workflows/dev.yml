@@ -22,10 +22,11 @@ jobs:
       run: ls
     - name: Change Path
       run: cd functions
-    - name: Show directories
-      run: ls
-    - name: Install Dependencies
-      run: npm install  
+           npm install
+#     - name: Show directories
+#       run: ls
+#     - name: Install Dependencies
+#       run: npm install  
     - name: Deploy to Firebase
     #   uses: chrissank/deploy-firebase-functions@1.0.0
     #   env:
