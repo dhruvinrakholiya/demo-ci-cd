@@ -18,24 +18,10 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node-version }}
-    - name: Show directories
-      run: ls
-    - name: Change Path
+    - name: Change Path and Install dependencies
       run: cd functions && npm install
-#     - name: Show directories
-#       run: ls
-#     - name: Install Dependencies
-#       run: npm install  
     - name: Deploy to Firebase
-    #   uses: chrissank/deploy-firebase-functions@1.0.0
-    #   env:
-    #     FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
-    #     TARGET: default 
-      # uses: doonstore/firebase-deploy@v1
-      # with:
-      #   params: --only functions
       uses: dhruvinrakholiya/firebase-action-version-7.7.0@firebase_version
-#       run: npm i 
       with:
         args: deploy --only functions,hosting
       env:
