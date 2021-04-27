@@ -21,10 +21,9 @@ jobs:
     - name: Show directories
       run: ls
     - name: Change Path
-      run: cd functions
-#            npm install
-    - name: Show directories
-      run: ls
+      run: cd functions && npm install
+#     - name: Show directories
+#       run: ls
     - name: Install Dependencies
       run: npm install  
     - name: Deploy to Firebase
@@ -36,7 +35,7 @@ jobs:
       # with:
       #   params: --only functions
       uses: dhruvinrakholiya/firebase-action-version-7.7.0@firebase_version
-#
+#       run: npm i 
       with:
         args: deploy --only functions,hosting
       env:
