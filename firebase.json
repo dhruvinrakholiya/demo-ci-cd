@@ -2,8 +2,8 @@
   "functions": {
     "rewrites": [
       {
-        "source": "/app",
-        "function": "app"
+        "source": "/functions",
+        "function": "expressApp"
       }
     ],
     "source": "functions"
